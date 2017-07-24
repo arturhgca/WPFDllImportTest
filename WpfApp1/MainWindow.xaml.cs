@@ -45,8 +45,6 @@ namespace WpfApp1
         {
             InitializeComponent();
             this.DataContext = this;
-            this.TestData = "hi";
-            Trace.WriteLine(this.TestData);
 
             this.MyModel = new PlotModel {Title = "Example 1" };
             this.MyModel.Series.Add(new ScatterSeries());
@@ -62,8 +60,7 @@ namespace WpfApp1
             int y = (int)Math.Pow(x, 2);
             (this.MyModel.Series[0] as ScatterSeries).Points.Add(new ScatterPoint(x, y));
             MyModel.InvalidatePlot(true);
-            // this.TestData = new Random().Next().ToString();
-            //Trace.WriteLine(this.TestData);
+
             if (this.dataTimer3 == null)
             {
                 this.dataTimer3 = new DispatcherTimer();
@@ -77,8 +74,7 @@ namespace WpfApp1
         public void ChangeText(object sender, EventArgs e)
         {
             this.TestData = GetRandomValue().ToString();
-            // this.TestData = new Random().Next().ToString();
-            //Trace.WriteLine(this.TestData);
+
             if (this.dataTimer1 == null)
             {
                 this.dataTimer1 = new DispatcherTimer();
@@ -104,7 +100,7 @@ namespace WpfApp1
                 }
             }
             this.Matrix = _matrix;
-            //Trace.WriteLine(this.Matrix.Length);
+
             if (this.dataTimer2 == null)
             {
                 this.dataTimer2 = new DispatcherTimer();
